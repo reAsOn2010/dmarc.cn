@@ -13,7 +13,8 @@ The tools provided here may be not the same as dmarcian.com
 * SPF lookup
 * DMARC lookup
 * Port 25 testing
-* ~~more?~~
+* DMARC record generator
+* DMARC report xml file parser
 
 And a friendly UI
 <hr>
@@ -24,12 +25,25 @@ And a friendly UI
 * SPF查询
 * DMARC查询
 * 25号端口测试
-* ~~更多？~~
+* DMARC记录生成器
+* DMARC报告解析器
 
 以及一个友好的UI界面
 
 #### update log
+Date: 2013-08-14
+
+* Add new functions
+* Use new UI
+
 Date: 2013-07-20
 
 * Build the skeleton
 * Add spf and port 25 test script
+
+#### build
+
+Dependency:
+
+* nginx/apache/other http server
+* Smarty template engine

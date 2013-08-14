@@ -1,0 +1,230 @@
+body {
+      background-color : #eee;
+      background-repeat: repeat-y;
+      margin: 4px;
+      padding: 4px;
+}
+
+hr {
+    border-top:1px solid #cfcfcf;
+    height: 1px;
+    overflow:hidden;
+}
+
+body, a, td, div, p, select, input {
+	font-size:12px;
+}
+
+a { 
+	color: #0000FF; 
+	text-decoration:none;
+}
+
+a:hover {
+	color: red;
+}
+
+h1 {
+	margin:  2px;
+	padding: 2px;
+}
+
+form {
+	margin:  2px;
+	padding: 2px;
+}
+
+input {       
+   font-family: Verdana,Arial,sans-serif;
+   font-size:12px;
+   background-color: #EFEFEF;
+   border: 1px solid #4682B4;
+   filter:progid:DXImageTransform.Microsoft.Gradient
+   (GradientType=0,StartColorStr='#ffffffff',EndColorStr='#eeeeeeee');
+}
+
+.div{
+	position: absolute;
+	border: 1px solid #dddddd;
+	background-color: #F2F2F2;
+	font-size:12px;
+	z-index:1000;
+}
+
+tr.title {
+	font-weight: bold;
+	text-align: center;
+	cursor: hand; 
+}
+
+
+
+/* 投诉处理表格样式 start */
+
+.table_complain{
+      border:#CFCFCF solid;
+      border-width:0 1 1 1; 
+}
+
+.td_complain{
+     border:#CFCFCF solid;
+     border-width:1 0 0 0; 
+}
+
+.table_complain_index{
+    border:#CFCFCF dotted;
+    border-width:0 0 0 0;
+}
+
+.td_complain_index{
+    border:#CFCFCF dotted;
+    border-width:0 0 2 0;
+}
+
+.td_complain_index_warn{
+    border:RED dotted;
+    border-width:0 0 2 0;
+}
+
+.table_complain_show{
+      border:#000000 solid;
+      border-width:1 1 1 1;
+}
+
+.table_complain_show_1{
+    border:#000000 solid;
+    border-width:0 0 0 0;
+}
+
+.td_complain_show{
+    border:#CFCFCF dotted;
+    border-width:2 0 0 0;
+}
+
+
+
+#table_show {
+    border:#CFCFCF solid;
+    border-width:1 1 1 1;
+}
+
+#table_all {
+    border:#CFCFCF dotted;
+    border-width:0 0 0 0;
+}
+
+#table_all tr{
+    background:#EEE;
+}
+
+#table_all td{
+    border:#CFCFCF dotted;
+    border-width:0 0 2 0;
+}
+
+/* 投诉 处理历史  start */
+#table_complain_history_find {
+    border:#CFCFCF dotted;
+    border-width:0 0 0 0;
+}
+
+#table_complain_history_find tr {
+   background:#EEE; 
+}
+
+#table_complain_history_find td{
+    border:#CFCFCF dotted;
+    border-width:0 0 0 0;
+}
+
+/* 投诉 处理历史  end */
+
+
+/* 投诉 处理投诉 start */
+.table_complain_show {
+    border:#CFCFCF dotted;
+    border-width:0 0 0 0;
+}
+
+.table_complain_show tr {
+    background:#EEE;
+}
+
+.table_complain_show td {
+    border:#CFCFCF dotted;
+    border-width:0 0 2 0;
+}
+
+/* 投诉 处理投诉 end */
+
+#table_last {
+    border:#CFCFCF dotted;
+    border-width:0 0 0 0;
+}
+
+#table_last tr{
+    background:#EEE;
+}
+
+#table_last td{
+    border:#CFCFCF dotted;
+    border-width:0 0 2 0;
+}
+/* 投诉处理表格样式 end */
+
+
+/* 登录框 start */
+.align-center{   
+    margin:0 auto;         
+    width:100%;
+    text-align:center;   
+} 
+
+/* 登录框 end t */
+
+
+
+/* 投诉 修改表单 start*/
+.complain_modify_textarea {
+    overflow:auto; 
+    border-color: #EEE;
+}
+
+.complain_modify_input {
+    border-left:0px;
+    border-top:0px;
+    border-right:0px;
+    border-bottom:1px
+}
+/* 投诉 修改表单 end*/
+
+
+/* test */
+fieldset {
+    padding:10px;
+    margin-top:5px;
+    border:1px solid #1E7ACE;
+    background:#eee;
+}
+
+fieldset legend {
+    color:#1E7ACE;
+    font-weight:bold;
+    padding:3px 20px 3px 20px;
+    border:1px solid #1E7ACE;    
+    background:#eee;
+}
+
+fieldset label {
+    float:left;
+    width:120px;
+    text-align:right;
+    padding:4px;
+    margin:1px;
+}
+
+fieldset div {
+    clear:left;
+    margin-bottom:2px;
+}
+/* test */
