@@ -1,5 +1,4 @@
 <?php
-
 require('./libs/Smarty.class.php');
 $smarty = new Smarty();
 
@@ -83,5 +82,3 @@ $smarty->assign("spf_fail_total", $spf_fail_total);
 $smarty->display("xml.tpl");
 
 ?>
-    </body>
-</html>

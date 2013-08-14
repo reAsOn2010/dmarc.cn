@@ -1,61 +1,5 @@
 <?php
 session_start();
-/*
-
-function checksession() {
-    if (isset($_SESSION['cxlm_logined_corpmail']) and !empty($_SESSION['cxlm_logined_corpmail'])) {
-        return true;
-    }
-    return false;
-}
-
-# 获得用户原始IP
-function getRealIp(){
-    $ip=false;
-    if(!empty($_SERVER["HTTP_CLIENT_IP"])){
-        $ip = $_SERVER["HTTP_CLIENT_IP"];
-    }
-    if (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-        $ips = explode (", ", $_SERVER['HTTP_X_FORWARDED_FOR']);
-            if ($ip) { array_unshift($ips, $ip); $ip = FALSE; }
-            for ($i = 0; $i < count($ips); $i++) {
-                if (!eregi ("^(10\.|172\.16|192\.168)\.", $ips[$i])) {
-                    $ip = $ips[$i];
-                    break;
-                }
-            }
-    }
-    return ($ip ? $ip : $_SERVER['REMOTE_ADDR']);
-}
-
-// 仅限公司办公内网访问
-$WhiteIPList = array(
-    '218.107.55.253',
-    '218.107.55.254',
-    '113.108.224.230',
-    '59.42.177.211',
-    '112.64.161.210',
-    '112.64.161.211',
-    '114.113.197.131',
-    '114.113.197.132',
-    '61.135.255.84',
-    '61.135.255.86',
-    '61.135.255.88',
-    '203.86.46.130',
-    '203.86.63.98',
-    '123.58.191.69',
-);
-$userIP = getRealIp();
-if(!in_array($userIP, $WhiteIPList)){
-    header("Content-Type: text/html; charset=utf-8");
-    print "你的IP($userIP)不被允许访问！";
-    exit();
-}
-if(!checksession()){
-    header("Location: https://kefu.mail.netease.com/cxlm/index.php");
-    exit();
-}
-*/
 
 //Smarty配置
 require('./libs/Smarty.class.php');
@@ -92,19 +36,21 @@ else if (isset($_GET["ip-ptr"]) && !empty($_GET["ip-ptr"])) {
     $result = readAllFromPipe($cmd);
 }
 
-//
+//RBL查询功能
 else if (isset($_GET["ip-rbl"]) && !empty($_GET["ip-rbl"])) {
     $ip = $_GET["ip-rbl"];
     $cmd = "./scripts/dnsquery.py $ip RBL";
     $result = readAllFromPipe($cmd);
 }
 
+//25号端口测试
 else if (isset($_GET["port25"]) && !empty($_GET["port25"])) {
     $domain = $_GET["port25"];
     $cmd = "./scripts/test25.py $domain";
     $result = readAllFromPipe($cmd);
 }
 
+//dmarc记录生成
 else if (isset($_GET["dmarc-gen-domain"]) && !empty($_GET["dmarc-gen-domain"])) {
     if (!isset($_GET["policy"]))
         $result .= "[INFO] Policy是必填字段\n";
@@ -144,6 +90,7 @@ else if (isset($_GET["dmarc-gen-domain"]) && !empty($_GET["dmarc-gen-domain"])) 
     }
 }
 
+//dkim记录查询
 else if (isset($_GET["dkim-domain"]) && !empty($_GET["dkim-domain"])) {
     $selector = $_GET["selector"];
     $domain = $_GET["dkim-domain"];
@@ -155,4 +102,3 @@ $smarty->assign("result", $result);
 $smarty->display("dns.tpl");
 
 ?>
-
